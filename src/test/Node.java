@@ -3,14 +3,15 @@ package test;
 import java.util.HashMap;
 
 public class Node {
-	public int type;
+	public int type;// type=0,1,2,3: root,noisy meta-node, selector-meta,
+					// failover-meta
 	public int id;
 	public double pDown;
 	public double pUp;
 	public double pTrouble;
 	public HashMap<Node, Double> children;
 
-	public Node(int type, int id, double pDown, double pUp, double pTrouble) {
+	public Node(int type, int id, double pUp, double pTrouble, double pDown) {
 		this.type = type;
 		this.id = id;
 		this.pDown = pDown;

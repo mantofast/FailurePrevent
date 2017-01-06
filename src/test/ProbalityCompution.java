@@ -27,15 +27,63 @@ public class ProbalityCompution {
 				if (!q.contains(c)) {
 					q.add(c);
 					// System.out.println("children node id: " + c.id);
+					// 当selector节点时，计算初始化c的概率值
+					if (c.type == 2) {
+						c.setpUp(n.pUp);
+						c.setpDown(n.pDown);
+						c.setpTrouble(n.pTrouble);
+						continue;
+					}
+
 				}
-				c.setpUp(c.getpUp()
-						* ((1 - v) * (n.pDown + n.pTrouble) + n.pUp));
-				c.setpDown(1 - (1 - c.getpDown())
-						* ((1 - n.getpDown()) + (1 - v) * n.getpDown()));
-				c.setpTrouble(1 - c.getpDown() - c.getpUp());
+				switch (c.type) {
+				case 0:// root-node
+					break;
+				case 1:// noisy-meta node
+				{
+					c.setpUp(c.getpUp()
+							* ((1 - v) * (n.pDown + n.pTrouble) + n.pUp));
+					c.setpDown(1 - (1 - c.getpDown())
+							* ((1 - n.getpDown()) + (1 - v) * n.getpDown()));
+					c.setpTrouble(1 - c.getpDown() - c.getpUp());
+				}
+					break;
+				case 2:// selector meta-node
+				{
+					double pU = (c.getpUp() * (n.pUp + (1 - v) * (1 - n.pUp)) + n.pUp
+							* v * (1 - c.getpUp()));
+					double pD = (c.getpDown()
+							* (n.pDown + (1 - v) * (1 - n.pDown)) + n.pDown * v
+							* (1 - c.getpDown()));
+					double pT = (c.getpTrouble()
+							* (n.pTrouble + (1 - n.pTrouble) * (1 - v)) + n.pTrouble
+							* v * (1 - c.pTrouble));
+
+					c.setpUp(pU);
+					c.setpDown(pD);
+					c.setpTrouble(pT);
+					// System.out.println("!!!up、tr、do:  " + c.getpUp() + " "
+					// + c.getpTrouble() + " " + c.getpDown());
+				}
+					break;
+				case 3:// failover meta-node
+				{
+					c.setpUp(n.getpUp() + n.getpDown() * c.getpUp());
+					c.setpDown(n.getpDown() * c.getpDown());
+					c.setpTrouble(n.getpTrouble() + n.getpDown()
+							* c.getpTrouble());
+					// System.out.println("up、tr、do:  " + c.getpUp() + " "
+					// + c.getpTrouble() + " " + c.getpDown());
+				}
+					break;
+				default:
+					break;
+
+				}
+
 			}
-			System.out.println("Node id:" + n.id + " pUp: " + n.pUp + " pDown:"
-					+ n.pDown + " pTrouble:" + n.pTrouble);
+			System.out.println("Node id:" + n.id + " pUp: " + n.pUp
+					+ " pTrouble:" + n.pTrouble + " pDown:" + n.pDown);
 			q.remove();
 		}
 	}
