@@ -87,4 +87,13 @@ public class ProbalityCompution {
 			q.remove();
 		}
 	}
+
+	public void computeScore() {
+		ComputeOutput();
+		double score = 0.0;
+		for (Node n : this.inputGraph.obsNodes) {
+			score += n.pDown * (-1.0) + n.pUp * (3.0) + n.pTrouble * (1.0);
+		}
+		System.out.println("score is: " + score);
+	}
 }
