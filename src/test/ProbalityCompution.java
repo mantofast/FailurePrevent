@@ -75,6 +75,8 @@ public class ProbalityCompution {
 					// System.out.println("up¡¢tr¡¢do:  " + c.getpUp() + " "
 					// + c.getpTrouble() + " " + c.getpDown());
 
+					// compare with the pre process, we can find the order is
+					// changed,now the first node is the primary node
 					double pU = c.getpUp() + c.getpDown() * n.getpUp();
 					double pT = c.getpTrouble() + c.getpDown()
 							* n.getpTrouble();
