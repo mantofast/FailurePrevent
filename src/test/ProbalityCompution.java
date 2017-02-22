@@ -28,7 +28,7 @@ public class ProbalityCompution {
 					q.add(c);
 					// System.out.println("children node id: " + c.id);
 					// 当selector节点时，计算初始化c的概率值
-					if (c.type == 2) {
+					if (c.type >= 2) {
 						c.setpUp(n.pUp);
 						c.setpDown(n.pDown);
 						c.setpTrouble(n.pTrouble);
@@ -68,12 +68,21 @@ public class ProbalityCompution {
 					break;
 				case 3:// failover meta-node
 				{
-					c.setpUp(n.getpUp() + n.getpDown() * c.getpUp());
-					c.setpDown(n.getpDown() * c.getpDown());
-					c.setpTrouble(n.getpTrouble() + n.getpDown()
-							* c.getpTrouble());
+					// c.setpUp(n.getpUp() + n.getpDown() * c.getpUp());
+					// c.setpDown(n.getpDown() * c.getpDown());
+					// c.setpTrouble(n.getpTrouble() + n.getpDown()
+					// * c.getpTrouble());
 					// System.out.println("up、tr、do:  " + c.getpUp() + " "
 					// + c.getpTrouble() + " " + c.getpDown());
+
+					double pU = c.getpUp() + c.getpDown() * n.getpUp();
+					double pT = c.getpTrouble() + c.getpDown()
+							* n.getpTrouble();
+					double pD = c.getpDown() * n.getpDown();
+					c.setpUp(pU);
+					c.setpDown(pD);
+					c.setpTrouble(pT);
+					// System.out.println("hahhah");
 				}
 					break;
 				default:
