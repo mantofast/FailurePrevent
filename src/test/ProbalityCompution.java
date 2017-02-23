@@ -17,6 +17,7 @@ public class ProbalityCompution {
 		Queue<Node> q = new LinkedList<Node>();
 		for (Node n : this.inputGraph.rootNodes)
 			q.add(n);
+		HashMap<Node, Double> selctTmpS = new HashMap<Node, Double>();
 		while (!q.isEmpty()) {
 			Node n = q.element();
 			HashMap<Node, Double> map = n.children;
@@ -28,10 +29,17 @@ public class ProbalityCompution {
 					q.add(c);
 					// System.out.println("children node id: " + c.id);
 					// 当selector节点时，计算初始化c的概率值
-					if (c.type >= 2) {
+					if (c.type == 2) {
 						c.setpUp(n.pUp);
 						c.setpDown(n.pDown);
 						c.setpTrouble(n.pTrouble);
+						selctTmpS.put(c, v);
+						continue;
+					} else if (c.type == 3) {
+						c.setpUp(n.pUp);
+						c.setpDown(n.pDown);
+						c.setpTrouble(n.pTrouble);
+
 						continue;
 					}
 
@@ -50,6 +58,11 @@ public class ProbalityCompution {
 					break;
 				case 2:// selector meta-node
 				{
+					double dpC = selctTmpS.get(c);
+					double tmpS = dpC + v;
+					v = v / tmpS;
+					selctTmpS.put(c, tmpS);
+
 					double pU = (c.getpUp() * (n.pUp + (1 - v) * (1 - n.pUp)) + n.pUp
 							* v * (1 - c.getpUp()));
 					double pD = (c.getpDown()

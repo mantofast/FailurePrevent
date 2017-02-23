@@ -7,9 +7,10 @@ public class testMain {
 		// double m[][] = { { 0, 0, 0, 0.2 }, { 0, 0, 0, 0.3 }, { 0, 0, 0, 0.5
 		// },
 		// { 0, 0, 0, 0 } };
+		// DependGraph g = new DependGraph(m, 3, 1);
 
 		// test for 2 nodes
-		double m[][] = { { 0, 0, 1 }, { 0, 0, 1 }, { 0, 0, 0 } };
+		double m[][] = { { 0, 0, 0.5 }, { 0, 0, 0.5 }, { 0, 0, 0 } };
 		DependGraph g = new DependGraph(m, 2, 1);
 
 		// double m[][] = { { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },

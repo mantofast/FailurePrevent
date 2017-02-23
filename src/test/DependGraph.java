@@ -33,14 +33,26 @@ public class DependGraph {
 		// test for two parents
 		// !!!!! for type2 and type3, must modify the obs node type or the rest
 		// node type
-		Node n1 = new Node(0, 1, 0, 0, 1);
+		Node n1 = new Node(0, 1, 0.6, 0.4, 0);
 		rootNodes[0] = n1;
 		nodes[0] = n1;
-		Node n2 = new Node(0, 2, 0, 1, 0);
+		Node n2 = new Node(0, 2, 0.5, 0.5, 0);
 		rootNodes[1] = n2;
 		nodes[1] = n2;
-
 		// ******************************//
+
+		// ************************************//
+		// test for three parents
+		// Node n1 = new Node(0, 1, 0, 0, 1);
+		// rootNodes[0] = n1;
+		// nodes[0] = n1;
+		// Node n2 = new Node(0, 2, 0, 1, 0);
+		// rootNodes[1] = n2;
+		// nodes[1] = n2;
+		// Node n3 = new Node(0, 3, 1, 0, 0);
+		// rootNodes[2] = n3;
+		// nodes[2] = n3;
+		// ***********************************//
 
 		// Node n1 = new Node(0, 1, 0, 0, 1);
 		// rootNodes[0] = n1;
@@ -66,7 +78,7 @@ public class DependGraph {
 		// !!!!! for type2 and type3, must modify the obs node type or the rest
 		// node type
 		for (i = m[0].length - obsNum + 1; i <= m[0].length; i++) {
-			Node n = new Node(3, i, 1, 0, 0);
+			Node n = new Node(2, i, 1, 0, 0);
 			obsNodes[i - (m[0].length - obsNum) - 1] = n;
 			nodes[i - 1] = n;
 		}
