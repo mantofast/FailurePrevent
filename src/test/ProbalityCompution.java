@@ -6,10 +6,10 @@ import java.util.Map;
 import java.util.Queue;
 
 public class ProbalityCompution {
-	public DependGraph inputGraph;
+	public DependLinkGraph inputGraph;
 	public DependGraph outputGraph;
 
-	public ProbalityCompution(DependGraph inputGraph) {
+	public ProbalityCompution(DependLinkGraph inputGraph) {
 		this.inputGraph = inputGraph;
 	}
 
