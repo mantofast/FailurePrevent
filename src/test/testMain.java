@@ -33,6 +33,14 @@ public class testMain {
 		ProbalityCompution c = new ProbalityCompution(g);
 		c.computeScore();
 
+		// compute the enhance amount of different rest resource deploy ways
+		double Q[] = { 8.361, 6.283, 6.156, 6.142, 7.075, 6.891, 6.778 };
+		double percent[] = new double[6];
+		for (int i = 1; i < 7; i++) {
+			percent[i - 1] = (Q[0] - Q[i]) / Q[0];
+			System.out.print(percent[i - 1] + "  ");
+		}
+
 	}
 
 }

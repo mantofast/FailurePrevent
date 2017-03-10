@@ -116,7 +116,8 @@ public class ProbalityCompution {
 		ComputeOutput();
 		double score = 0.0;
 		for (Node n : this.inputGraph.obsNodes) {
-			score += n.pDown * (-1.0) + n.pUp * (3.0) + n.pTrouble * (1.0);
+			score += n.pDown * (10.0) + n.pTrouble * (1.0);
+			// System.out.println("score is: " + score);
 		}
 		System.out.println("score is: " + score);
 	}

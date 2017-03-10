@@ -39,7 +39,7 @@ public class DependLinkGraph {
 		}
 
 		// meta-nodes
-		Node m1 = new Node(2, 10, 1, 0, 0);
+		Node m1 = new Node(3, 10, 1, 0, 0);
 		nodes.add(m1);
 		Node m2 = new Node(3, 11, 1, 0, 0);
 		nodes.add(m2);
@@ -62,9 +62,9 @@ public class DependLinkGraph {
 			tmpNodes[j] = n;
 			j++;
 		}
-
-		tmpNodes[1].children.put(tmpNodes[10], 0.5);
-		tmpNodes[2].children.put(tmpNodes[10], 0.5);
+		// figure4 L1,NC1
+		tmpNodes[1].children.put(tmpNodes[10], 1.0);
+		tmpNodes[2].children.put(tmpNodes[10], 1.0);
 		tmpNodes[3].children.put(tmpNodes[12], 1.0);
 		tmpNodes[3].children.put(tmpNodes[14], 1.0);
 		tmpNodes[4].children.put(tmpNodes[13], 1.0);
@@ -80,5 +80,96 @@ public class DependLinkGraph {
 		tmpNodes[11].children.put(tmpNodes[12], 1.0);
 		tmpNodes[11].children.put(tmpNodes[13], 1.0);
 
+		// figure5 CL2,NC1
+		// tmpNodes[1].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[2].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[3].children.put(tmpNodes[12], 0.8);
+		// tmpNodes[3].children.put(tmpNodes[13], 0.8);
+		// tmpNodes[4].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[4].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[6].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[7].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[8].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[11].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[11].children.put(tmpNodes[13], 1.0);
+
+		// FIGURE 6 ,CL1,NC1
+		// tmpNodes[1].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[2].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[3].children.put(tmpNodes[12], 0.8);
+		// tmpNodes[3].children.put(tmpNodes[13], 0.8);
+		// tmpNodes[4].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[4].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[6].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[7].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[8].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[11].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[11].children.put(tmpNodes[13], 1.0);
+
+		// figure7 L1,NC2
+		// tmpNodes[1].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[2].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[3].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[3].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[4].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[4].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[6].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[7].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[8].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[12], 0.8);
+		// tmpNodes[10].children.put(tmpNodes[13], 0.8);
+		// tmpNodes[11].children.put(tmpNodes[14], 1.0);
+
+		// figure8 CL2,NC2
+		// tmpNodes[1].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[2].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[3].children.put(tmpNodes[12], 0.8);
+		// tmpNodes[3].children.put(tmpNodes[13], 0.8);
+		// tmpNodes[4].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[4].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[6].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[7].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[8].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[11].children.put(tmpNodes[14], 1.0);
+
+		// FIGURE 9,CL1,NC2
+		// tmpNodes[1].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[2].children.put(tmpNodes[10], 1.0);
+		// tmpNodes[3].children.put(tmpNodes[12], 0.8);
+		// tmpNodes[3].children.put(tmpNodes[13], 0.8);
+		// tmpNodes[4].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[4].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[5].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[6].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[7].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[8].children.put(tmpNodes[11], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[9].children.put(tmpNodes[13], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[12], 1.0);
+		// tmpNodes[10].children.put(tmpNodes[14], 1.0);
+		// tmpNodes[11].children.put(tmpNodes[14], 1.0);
+
 	}
+
 }
